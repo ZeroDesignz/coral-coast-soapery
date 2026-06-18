@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Coral Coast Soapery</title>
+    <meta name="description" content="The story behind Coral Coast Soapery — small-batch, handmade soaps and balms crafted with natural ingredients.">
+    <link rel="icon" href="logo/CORAL COAST_LOGO.jpg">
+
+    <!-- Open Graph / social share -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Coral Coast Soapery">
+    <meta property="og:description" content="Small-batch, handmade soaps and balms crafted with natural ingredients.">
+    <meta property="og:image" content="logo/CORAL COAST_LOGO.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo/CORAL COAST_LOGO.jpg" alt="Coral Coast Soapery Logo">
+        </a>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="cart-icon" id="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <!-- TODO (client): replace the placeholder copy below with the real brand story. -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Our Story</h1>
+            <p>Handcrafted on the coast, made for your skin.</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-story">
+            <h2>Made by hand, in small batches</h2>
+            <p>
+                [Placeholder — share how Coral Coast Soapery began: who started it, why,
+                and what makes your soaps and balms special.] Every bar is cold-process
+                soap, cured slowly and stamped by hand. We use simple, skin-loving
+                ingredients like olive oil, coconut oil and shea butter — and we keep the
+                ingredient list short and honest.
+            </p>
+            <p>
+                [Placeholder — add a personal note about your craft, your coastal
+                inspiration, or your commitment to natural ingredients.]
+            </p>
+        </div>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🌿</div>
+                <h3>Natural Ingredients</h3>
+                <p>Plant oils, butters and essential oils — no harsh detergents.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤍</div>
+                <h3>Handmade in Small Batches</h3>
+                <p>Cold-process soap, hand-cut, hand-stamped and slow-cured.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🐝</div>
+                <h3>Honest &amp; Simple</h3>
+                <p>Short ingredient lists you can actually read and understand.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🎁</div>
+                <h3>Custom &amp; Gift-Ready</h3>
+                <p>Personalised bars and event favours made to order.</p>
+            </div>
+        </div>
+
+        <div class="about-cta">
+            <a href="shop.html" class="btn btn-primary">Shop the Collection</a>
+            <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Coral Coast Soapery. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

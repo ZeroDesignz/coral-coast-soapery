@@ -1,47 +1,430 @@
 // e:\CORAL COAST SOAPERY\main.js
 
 const productsData = [
-    // Soap Bars
-    { id: 's1', category: 'Soap Bars', title: 'Canadian Flag Soap', description: 'Red/white, maple leaf', scent: 'Sweet Maple & Crisp Winter Air', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Natural Fragrance, Red Mica', weight: '~107–145g', sku: 'SOAP-CAN-001', price: 12.00, image: 'images/IMG-20260616-WA0015.jpg' },
-    { id: 's2', category: 'Soap Bars', title: 'Watermelon Soap', description: 'Cold-process, stamped with logo', scent: 'Juicy Watermelon & Summer Sugar', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Fragrance, Poppy Seeds, Mica', weight: '107g', sku: 'SOAP-WAT-002', price: 12.00, image: 'images/IMG-20260616-WA0016.jpg' },
-    { id: 's3', category: 'Soap Bars', title: 'Bergamot Soap', description: 'Cold-process, stamped with logo', scent: 'Bright Citrus Bergamot & Earl Grey', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Bergamot Essential Oil, Natural Clay', weight: '107g', sku: 'SOAP-BER-003', price: 12.00, image: 'images/IMG-20260616-WA0017.jpg' },
-    { id: 's4', category: 'Soap Bars', title: 'Eucalyptus & Lavender Soap', description: 'Cold-process, stamped with logo', scent: 'Calming Lavender & Refreshing Eucalyptus', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Eucalyptus & Lavender Essential Oils', weight: '120g', sku: 'SOAP-EUC-LAV-004', price: 13.00, image: 'images/IMG-20260616-WA0018.jpg' },
-    { id: 's5', category: 'Soap Bars', title: 'Eucalyptus & Cedarwood Soap', description: 'Rope soap option available', scent: 'Earthy Cedarwood & Brisk Eucalyptus', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Eucalyptus & Cedarwood Essential Oils', weight: '200g', sku: 'SOAP-EUC-CED-005', price: 15.00, image: 'images/IMG-20260616-WA0019.jpg' },
-    { id: 's6', category: 'Soap Bars', title: 'Eucalyptus & Ginger Soap', description: 'Cold-process, stamped with logo', scent: 'Zesty Ginger & Cool Eucalyptus', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Eucalyptus Essential Oil, Ginger Extract', weight: '143g', sku: 'SOAP-EUC-GIN-006', price: 14.00, image: 'images/IMG-20260616-WA0020.jpg' },
-    { id: 's7', category: 'Soap Bars', title: 'Eucalyptus & Eucalyptus Soap', description: 'Cold-process, stamped with logo', scent: 'Pure, Potent Eucalyptus', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Double-strength Eucalyptus Essential Oil', weight: '~107–145g', sku: 'SOAP-EUC-EUC-007', price: 12.00, image: 'images/IMG-20260616-WA0021.jpg' },
-    { id: 's8', category: 'Soap Bars', title: 'Unscented Soap', description: 'Cream/white color', scent: 'Pure and Natural (Unscented)', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water', weight: '135g', sku: 'SOAP-UNS-008', price: 11.00, image: 'images/IMG-20260616-WA0022.jpg' },
-    { id: 's9', category: 'Soap Bars', title: 'Lavender Soap', description: 'Purple/white swirl', scent: 'Soothing Lavender Fields', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Lavender Essential Oil, Purple Brazilian Clay', weight: '~107–145g', sku: 'SOAP-LAV-009', price: 12.00, image: 'images/IMG-20260616-WA0023.jpg' },
-    { id: 's10', category: 'Soap Bars', title: 'Charcoal Soap', description: 'Black/white marble', scent: 'Clean & Purifying Tea Tree', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Activated Charcoal, Tea Tree Essential Oil', weight: '~107–145g', sku: 'SOAP-CHA-010', price: 12.00, image: 'images/IMG-20260616-WA0024.jpg' },
-    { id: 's11', category: 'Soap Bars', title: 'Oatmeal & Honey Soap', description: 'Yellow, bee + oat toppers (Personalizable)', scent: 'Warm Honey & Toasted Oats', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Colloidal Oatmeal, Raw Organic Honey', weight: '~107–145g', sku: 'SOAP-OAT-011', price: 14.00, image: 'images/IMG-20260616-WA0025.jpg' },
-    { id: 's12', category: 'Soap Bars', title: 'Pumpkin Spice Soap', description: 'Cold-process, stamped with logo', scent: 'Warm Cinnamon, Nutmeg & Sweet Pumpkin', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Pumpkin Puree, Spice Essential Oils', weight: '~107–145g', sku: 'SOAP-PUM-012', price: 12.00, image: 'images/IMG-20260616-WA0026.jpg' },
-    { id: 's13', category: 'Soap Bars', title: 'Pink Himalayan Salt Soap', description: 'Cold-process, stamped with logo', scent: 'Ocean Breeze & Soft Florals', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Pink Himalayan Salt, Natural Fragrance', weight: '~107–145g', sku: 'SOAP-PIN-013', price: 13.00, image: 'images/IMG-20260616-WA0027.jpg' },
-    { id: 's14', category: 'Soap Bars', title: 'Vanilla Swirl Soap', description: 'Cold-process, stamped with logo', scent: 'Rich, Warm Madagascar Vanilla', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Vanilla Extract, Cocoa Powder', weight: '~107–145g', sku: 'SOAP-VAN-014', price: 12.00, image: 'images/IMG-20260616-WA0028.jpg' },
-    { id: 's15', category: 'Soap Bars', title: 'Sage Green Soap', description: 'Likely a eucalyptus variant', scent: 'Earthy Sage & Crisp Eucalyptus', ingredients: 'Olive Oil, Coconut Oil, Shea Butter, Lye, Water, Clary Sage & Eucalyptus Essential Oils', weight: '~107–145g', sku: 'SOAP-SAG-015', price: 12.00, image: 'images/IMG-20260616-WA0029.jpg' },
-
-    // Lip Balms
-    { id: 'lb1', category: 'Lip Balms', title: 'Raspberry Lip Balm', description: '0.15oz Lip Balm', scent: 'Sweet Wild Raspberry', ingredients: 'Raspberry seed oil, Grass-fed Tallow, Beeswax, Shea Butter', weight: '4g', sku: 'LIP-RAS-001', price: 5.00, image: 'images/IMG-20260616-WA0030.jpg' },
-    { id: 'lb2', category: 'Lip Balms', title: 'Peppermint Lip Balm', description: '0.15oz Lip Balm', scent: 'Cool, Refreshing Peppermint', ingredients: 'Grass-fed Tallow, Beeswax, Shea Butter, Peppermint Essential Oil', weight: '4g', sku: 'LIP-PEP-002', price: 5.00, image: 'images/IMG-20260616-WA0031.jpg' },
-    { id: 'lb3', category: 'Lip Balms', title: 'Bubble Gum Lip Balm', description: '0.15oz Lip Balm', scent: 'Classic Sweet Bubble Gum', ingredients: 'Grass-fed Tallow, Beeswax, Shea Butter, Natural Flavoring', weight: '4g', sku: 'LIP-BUB-003', price: 5.00, image: 'images/IMG-20260616-WA0032.jpg' },
-    { id: 'lb4', category: 'Lip Balms', title: 'Lip Balm Trio', description: 'Set of 3 Lip Balms', scent: 'Raspberry, Peppermint, Bubble Gum', ingredients: 'Tallow, Beeswax, Shea Butter, Natural Flavorings', weight: '12g', sku: 'LIP-TRI-004', price: 12.00, image: 'images/IMG-20260616-WA0033.jpg' },
-
-    // Balms / Tins
-    { id: 'b1', category: 'Balms & Tins', title: 'Tallow Whipped Balm', description: 'Whipped Body Balm', scent: 'Delicate Magnolia Blossom', ingredients: 'Grass-fed Tallow, Walnut oil, Rice Bran oil, Rosehip oil, Magnolia EO', weight: '65g', sku: 'BAL-WHI-001', price: 20.00, image: 'images/IMG-20260616-WA0034.jpg' },
-    { id: 'b2', category: 'Balms & Tins', title: 'Tallow Bum Balm', description: 'Baby balm', scent: 'Unscented (Natural Oatmilk & Honey)', ingredients: 'Grass-fed Tallow, Rosehip seed oil, Almond oil, Olive oil, Oatmilk & Honey EO', weight: '80g', sku: 'BAL-BUM-002', price: 22.00, image: 'images/IMG-20260616-WA0035.jpg' },
-
-    // Gift Sets & Extras
-    { id: 'g1', category: 'Gift Sets & Extras', title: 'Bamboo Gift Box', description: 'Balms + Soap + Lip Balm', scent: 'Assorted Best-Sellers', ingredients: 'See individual products', weight: 'N/A', sku: 'GFT-BAM-001', price: 45.00, image: 'images/IMG-20260616-WA0036.jpg' },
-    { id: 'g2', category: 'Gift Sets & Extras', title: 'Kraft-box Duo', description: 'Soap + Lip Balm', scent: 'Curated Pairing', ingredients: 'See individual products', weight: 'N/A', sku: 'GFT-KRA-002', price: 18.00, image: 'images/IMG-20260616-WA0037.jpg' },
-    { id: 'g3', category: 'Gift Sets & Extras', title: 'Custom Event Favors', description: 'e.g. baby shower "From Our Shower to Yours"', scent: 'Customized to your event', ingredients: 'Custom tailored', weight: 'N/A', sku: 'GFT-CUS-003', price: 0.00, image: 'images/IMG-20260616-WA0038.jpg' },
+    {
+        "id": "CCS-S01",
+        "sku": "CCS-S01",
+        "title": "Eucalyptus & Lavender Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0054.jpg",
+        "weight": "129g",
+        "scent": "Eucalyptus & Lavender",
+        "description": "Peach/tan bar",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S02",
+        "sku": "CCS-S02",
+        "title": "Eucalyptus & Cedarwood Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0024.jpg",
+        "weight": "200g",
+        "scent": "Eucalyptus & Cedarwood",
+        "description": "Sage green, rope hanger",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S03",
+        "sku": "CCS-S03",
+        "title": "Eucalyptus & Ginger Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0024.jpg",
+        "weight": "143g",
+        "scent": "Eucalyptus & Ginger",
+        "description": "Blue/green/pink layered",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S04",
+        "sku": "CCS-S04",
+        "title": "Eucalyptus Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0058.jpg",
+        "weight": "135g",
+        "scent": "Eucalyptus",
+        "description": "Sage green bar",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S05",
+        "sku": "CCS-S05",
+        "title": "Bergamont & Eucalyptus Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0096.jpg",
+        "weight": "135g",
+        "scent": "Bergamot & Eucalyptus",
+        "description": "Sage green bar",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S06",
+        "sku": "CCS-S06",
+        "title": "Bergamont Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0024.jpg",
+        "weight": "107g",
+        "scent": "Bergamot",
+        "description": "Grey/charcoal swirl",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S07",
+        "sku": "CCS-S07",
+        "title": "Unscented Soap (cream)",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0057.jpg",
+        "weight": "135g",
+        "scent": "Unscented",
+        "description": "Cream/white bar",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent) - no fragrance"
+    },
+    {
+        "id": "CCS-S08",
+        "sku": "CCS-S08",
+        "title": "Unscented Soap (blue)",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0063.jpg",
+        "weight": "135g",
+        "scent": "Unscented",
+        "description": "Teal/blue bar",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent) - no fragrance"
+    },
+    {
+        "id": "CCS-S09",
+        "sku": "CCS-S09",
+        "title": "Watermelon Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0082.jpg",
+        "weight": "107g",
+        "scent": "Watermelon",
+        "description": "Red/white/green w/ seeds",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S10",
+        "sku": "CCS-S10",
+        "title": "Lavender Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0056.jpg",
+        "weight": "N/A",
+        "scent": "Lavender",
+        "description": "Purple/white swirl + buds",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S11",
+        "sku": "CCS-S11",
+        "title": "Charcoal Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0060.jpg",
+        "weight": "N/A",
+        "scent": "Activated Charcoal",
+        "description": "Black/white marble",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent), Activated charcoal"
+    },
+    {
+        "id": "CCS-S12",
+        "sku": "CCS-S12",
+        "title": "Cow Print Charcoal Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0084.jpg",
+        "weight": "N/A",
+        "scent": "Charcoal (novelty)",
+        "description": "Cream w/ black spots",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent), Activated charcoal"
+    },
+    {
+        "id": "CCS-S13",
+        "sku": "CCS-S13",
+        "title": "Oatmeal & Honey Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0053.jpg",
+        "weight": "N/A",
+        "scent": "Oatmeal & Honey",
+        "description": "Yellow w/ bee & oat tops",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent), Oatmeal, Honey"
+    },
+    {
+        "id": "CCS-S14",
+        "sku": "CCS-S14",
+        "title": "Pumpkin Spice Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0064.jpg",
+        "weight": "N/A",
+        "scent": "Pumpkin Spice",
+        "description": "Orange/tan w/ flower top",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S15",
+        "sku": "CCS-S15",
+        "title": "Pink Himalayan Salt Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0066.jpg",
+        "weight": "N/A",
+        "scent": "Pink Himalayan Salt",
+        "description": "Pink, salt texture/swirl",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent), Pink Himalayan salt"
+    },
+    {
+        "id": "CCS-S16",
+        "sku": "CCS-S16",
+        "title": "Vanilla Swirl Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0077.jpg",
+        "weight": "N/A",
+        "scent": "Vanilla",
+        "description": "Brown/tan swirl",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S17",
+        "sku": "CCS-S17",
+        "title": "Coffee Scrub Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0076.jpg",
+        "weight": "N/A",
+        "scent": "Coffee",
+        "description": "Brown w/ coffee grounds",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent), Coffee grounds"
+    },
+    {
+        "id": "CCS-S18",
+        "sku": "CCS-S18",
+        "title": "Rose Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0079.jpg",
+        "weight": "N/A",
+        "scent": "Rose / floral",
+        "description": "Pink/rose swirl",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S19",
+        "sku": "CCS-S19",
+        "title": "Calendula Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0083.jpg",
+        "weight": "N/A",
+        "scent": "Calendula",
+        "description": "Cream w/ calendula petals",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent), Calendula petals"
+    },
+    {
+        "id": "CCS-S20",
+        "sku": "CCS-S20",
+        "title": "Dinosaur Kids Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0074.jpg",
+        "weight": "N/A",
+        "scent": "Kids / novelty",
+        "description": "Rainbow swirl + dino top",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S21",
+        "sku": "CCS-S21",
+        "title": "Rainbow / Pride Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0087.jpg",
+        "weight": "N/A",
+        "scent": "Novelty",
+        "description": "Layered rainbow + heart",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S22",
+        "sku": "CCS-S22",
+        "title": "Canadian Flag Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0015.jpg",
+        "weight": "N/A",
+        "scent": "Novelty / flag",
+        "description": "Red/white maple leaf",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-S23",
+        "sku": "CCS-S23",
+        "title": "De lo Mio Soap (Dominican Flag)",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0098.jpg",
+        "weight": "120g (4oz)",
+        "scent": "Novelty / flag",
+        "description": "Red/white/blue DR flag",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent); Ocean Breeze & Margarita EO"
+    },
+    {
+        "id": "CCS-S24",
+        "sku": "CCS-S24",
+        "title": "Cake Soap",
+        "category": "Soap Bar",
+        "price": 8.0,
+        "image": "images/IMG-20260616-WA0096.jpg",
+        "weight": "N/A",
+        "scent": "TBD",
+        "description": "Green striped (per display)",
+        "ingredients": "Tallow, Coconut oil, Olive oil, Shea butter, Castor oil (+ scent)"
+    },
+    {
+        "id": "CCS-L01",
+        "sku": "CCS-L01",
+        "title": "Raspberry Lip Balm",
+        "category": "Lip Balm",
+        "price": 5.0,
+        "image": "images/IMG-20260616-WA0030.jpg",
+        "weight": "4g (0.15oz)",
+        "scent": "Raspberry",
+        "description": "White tube, pink balm",
+        "ingredients": "Raspberry seed oil, Tallow (+ more - TBD)"
+    },
+    {
+        "id": "CCS-L02",
+        "sku": "CCS-L02",
+        "title": "Peppermint Lip Balm",
+        "category": "Lip Balm",
+        "price": 5.0,
+        "image": "images/IMG-20260616-WA0034.jpg",
+        "weight": "4g (0.15oz)",
+        "scent": "Peppermint",
+        "description": "White tube",
+        "ingredients": "TBD"
+    },
+    {
+        "id": "CCS-L03",
+        "sku": "CCS-L03",
+        "title": "Bubble Gum Lip Balm",
+        "category": "Lip Balm",
+        "price": 5.0,
+        "image": "images/IMG-20260616-WA0032.jpg",
+        "weight": "4g (0.15oz)",
+        "scent": "Bubble Gum",
+        "description": "White tube",
+        "ingredients": "TBD"
+    },
+    {
+        "id": "CCS-L04",
+        "sku": "CCS-L04",
+        "title": "Lip Balm Trio",
+        "category": "Lip Balm Set",
+        "price": 5.0,
+        "image": "images/IMG-20260616-WA0032.jpg",
+        "weight": "3 x 4g",
+        "scent": "Raspberry + Peppermint + Bubble Gum",
+        "description": "Set of 3 tubes",
+        "ingredients": "TBD"
+    },
+    {
+        "id": "CCS-B01",
+        "sku": "CCS-B01",
+        "title": "Tallow Whipped Balm",
+        "category": "Balm",
+        "price": 15.0,
+        "image": "images/IMG-20260616-WA0039.jpg",
+        "weight": "65g",
+        "scent": "Magnolia (lightly scented)",
+        "description": "Glass jar, black lid",
+        "ingredients": "Tallow, Walnut oil, Rice Bran oil, Rosehip oil, Magnolia EO"
+    },
+    {
+        "id": "CCS-B02",
+        "sku": "CCS-B02",
+        "title": "Tallow Bum Balm (Baby)",
+        "category": "Balm",
+        "price": 15.0,
+        "image": "images/IMG-20260616-WA0045.jpg",
+        "weight": "80g",
+        "scent": "Unscented",
+        "description": "Aluminum tin",
+        "ingredients": "Tallow, Rosehip seed oil, Almond oil, Olive oil, Oatmilk & Honey EO"
+    },
+    {
+        "id": "CCS-G01",
+        "sku": "CCS-G01",
+        "title": "Bamboo Box Gift Set",
+        "category": "Gift Set",
+        "price": 25.0,
+        "image": "images/IMG-20260616-WA0044.jpg",
+        "weight": "Mixed",
+        "scent": "Assorted",
+        "description": "Bamboo box: balm tin, whipped balm, soap, lip balm",
+        "ingredients": "Varies by contents"
+    },
+    {
+        "id": "CCS-G02",
+        "sku": "CCS-G02",
+        "title": "Kraft Box Duo (Soap + Lip Balm)",
+        "category": "Gift Set",
+        "price": 25.0,
+        "image": "images/IMG-20260616-WA0036.jpg",
+        "weight": "Mixed",
+        "scent": "Assorted",
+        "description": "Kraft window box: 1 soap + 1 lip balm",
+        "ingredients": "Varies by contents"
+    },
+    {
+        "id": "CCS-C01",
+        "sku": "CCS-C01",
+        "title": "Custom Event Favor Soap",
+        "category": "Custom",
+        "price": 50.0,
+        "image": "images/IMG-20260616-WA0043.jpg",
+        "weight": "N/A",
+        "scent": "Customer choice",
+        "description": "Wrapped soap + custom band label",
+        "ingredients": "Varies"
+    },
+    {
+        "id": "CCS-C02",
+        "sku": "CCS-C02",
+        "title": "Personalized Name-Stamped Soap",
+        "category": "Custom",
+        "price": 50.0,
+        "image": "images/IMG-20260616-WA0052.jpg",
+        "weight": "N/A",
+        "scent": "Customer choice",
+        "description": "Soap stamped w/ name",
+        "ingredients": "Varies"
+    }
 ];
 
 function createProductCard(product) {
     // Only display weight if it's applicable
     const weightDisplay = product.weight !== 'N/A' ? `<p class="product-weight">${product.weight}</p>` : '';
-    
+
+    // Zero-priced items (e.g. custom orders) are quoted, not bought directly.
+    const priceDisplay = product.price > 0 ? `$${product.price.toFixed(2)}` : 'Contact for Quote';
+    const actionButton = product.price > 0
+        ? `<button class="btn btn-primary add-to-cart">Add to Cart</button>`
+        : `<a href="product.html?id=${product.id}" class="btn btn-primary">Enquire</a>`;
+
     return `
         <div class="product-card" data-id="${product.id}">
             <a href="product.html?id=${product.id}" class="product-link">
-                <img src="${product.image}" alt="${product.title}" class="product-image">
+                <img src="${product.image}" alt="${product.title}" class="product-image" loading="lazy" decoding="async">
             </a>
             <div class="product-info">
                 <a href="product.html?id=${product.id}" class="product-link">
@@ -51,8 +434,8 @@ function createProductCard(product) {
                 <p class="product-desc-small">${product.description}</p>
                 <p class="product-scent" style="font-size: 0.85rem; font-style: italic; color: var(--color-ocean); margin-bottom: 0.25rem;">✨ ${product.scent}</p>
                 <p class="product-ingredients" style="font-size: 0.8rem; color: #718096; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" title="${product.ingredients}"><strong>Ingredients:</strong> ${product.ingredients}</p>
-                <div class="product-price">$${product.price.toFixed(2)}</div>
-                <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                <div class="product-price">${priceDisplay}</div>
+                ${actionButton}
             </div>
         </div>
     `;
@@ -106,14 +489,36 @@ document.addEventListener('DOMContentLoaded', () => {
             cartSidebar.classList.remove('open');
         });
     }
+
+    // --- Mobile Nav Toggle ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if(menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('open');
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+        // Close the menu after tapping a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('open');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
     
     // --- Add to Cart (Delegation since products are dynamically rendered) ---
     document.addEventListener('click', (e) => {
         if(e.target.classList.contains('add-to-cart')) {
             const btn = e.target;
             const productCard = btn.closest('.product-card');
-            const id = productCard.dataset.id;
-            
+            // Product cards expose the id on the wrapper; the product-detail
+            // button has no card wrapper, so fall back to the button's own id.
+            const id = btn.dataset.id || (productCard && productCard.dataset.id);
+            if(!id) return;
+
             const product = productsData.find(p => p.id === id);
             if(!product) return;
 
@@ -172,17 +577,28 @@ document.addEventListener('DOMContentLoaded', () => {
             itemEl.innerHTML = `
                 <img src="${item.image}" alt="${item.title}">
                 <div class="cart-item-details">
-                    <div class="cart-item-title">${item.title} (x${item.quantity})</div>
+                    <div class="cart-item-title">${item.title}</div>
                     <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
-                    <button class="remove-item" data-id="${item.id}">Remove</button>
+                    <div class="cart-qty">
+                        <button class="qty-btn qty-decrease" data-id="${item.id}" aria-label="Decrease quantity">&minus;</button>
+                        <span class="qty-value">${item.quantity}</span>
+                        <button class="qty-btn qty-increase" data-id="${item.id}" aria-label="Increase quantity">+</button>
+                        <button class="remove-item" data-id="${item.id}">Remove</button>
+                    </div>
                 </div>
             `;
             cartItemsContainer.appendChild(itemEl);
         });
-        
+
         cartTotalEl.innerText = '$' + total.toFixed(2);
-        
-        // Remove item listeners
+
+        // Quantity + remove listeners
+        document.querySelectorAll('.qty-increase').forEach(btn => {
+            btn.addEventListener('click', () => changeQty(btn.dataset.id, 1));
+        });
+        document.querySelectorAll('.qty-decrease').forEach(btn => {
+            btn.addEventListener('click', () => changeQty(btn.dataset.id, -1));
+        });
         document.querySelectorAll('.remove-item').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const id = e.target.dataset.id;
@@ -192,6 +608,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderCart();
             });
         });
+    }
+
+    // Adjust an item's quantity; removing it entirely when it drops to zero.
+    function changeQty(id, delta) {
+        const item = cart.find(i => i.id === id);
+        if(!item) return;
+        item.quantity += delta;
+        if(item.quantity <= 0) {
+            cart = cart.filter(i => i.id !== id);
+        }
+        saveCart();
+        updateCartCount();
+        renderCart();
     }
     
     // Render Checkout (if on checkout page)
@@ -230,15 +659,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (product) {
             document.title = `${product.title} | Coral Coast Soapery`;
             const weightDisplay = product.weight !== 'N/A' ? `<p class="pd-weight">Weight: ${product.weight}</p>` : '';
-            
+
+            const pdPriceDisplay = product.price > 0 ? `$${product.price.toFixed(2)}` : 'Contact for Quote';
+            const pdActionButton = product.price > 0
+                ? `<button class="btn btn-primary add-to-cart pd-add-btn" data-id="${product.id}">Add to Cart</button>`
+                : `<a href="contact.html" class="btn btn-primary pd-add-btn">Enquire About This Item</a>`;
+
             productDetailContainer.innerHTML = `
                 <div class="pd-gallery">
-                    <img src="${product.image}" alt="${product.title}">
+                    <img src="${product.image}" alt="${product.title}" decoding="async">
                 </div>
                 <div class="pd-info">
                     <p class="pd-category">${product.category}</p>
                     <h1 class="pd-title">${product.title}</h1>
-                    <div class="pd-price">$${product.price.toFixed(2)}</div>
+                    <div class="pd-price">${pdPriceDisplay}</div>
                     <p class="pd-scent">✨ ${product.scent}</p>
                     <p class="pd-desc">${product.description}</p>
                     ${weightDisplay}
@@ -246,9 +680,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3>Ingredients</h3>
                         <p>${product.ingredients}</p>
                     </div>
-                    
-                    <button class="btn btn-primary add-to-cart pd-add-btn" data-id="${product.id}">Add to Cart</button>
-                    
+
+                    ${pdActionButton}
+
                     <div class="pd-shipping-note">
                         <p>🌿 Handmade in small batches. Please allow 3-5 days for shipping.</p>
                     </div>
@@ -270,6 +704,29 @@ document.addEventListener('DOMContentLoaded', () => {
             cart = [];
             saveCart();
             window.location.href = 'index.html';
+        });
+    }
+
+    // Contact / order enquiry form -> opens the visitor's email client pre-filled
+    const contactForm = document.getElementById('contact-form');
+    if(contactForm) {
+        // TODO (client): set this to the real business inbox.
+        const BUSINESS_EMAIL = 'hello@coralcoastsoapery.com';
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('cName').value.trim();
+            const email = document.getElementById('cEmail').value.trim();
+            const message = document.getElementById('cMessage').value.trim();
+
+            const subject = encodeURIComponent(`Order enquiry from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+            window.location.href = `mailto:${BUSINESS_EMAIL}?subject=${subject}&body=${body}`;
+
+            const status = document.getElementById('contact-form-status');
+            if(status) {
+                status.textContent = `Opening your email app… if nothing happens, email us directly at ${BUSINESS_EMAIL}.`;
+            }
+            contactForm.reset();
         });
     }
     

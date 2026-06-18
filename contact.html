@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact &amp; Orders | Coral Coast Soapery</title>
+    <meta name="description" content="Place an order or ask a question — reach Coral Coast Soapery by email, WhatsApp or Instagram.">
+    <link rel="icon" href="logo/CORAL COAST_LOGO.jpg">
+
+    <!-- Open Graph / social share -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Coral Coast Soapery">
+    <meta property="og:description" content="Place an order or ask a question — reach us by email, WhatsApp or Instagram.">
+    <meta property="og:image" content="logo/CORAL COAST_LOGO.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo/CORAL COAST_LOGO.jpg" alt="Coral Coast Soapery Logo">
+        </a>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <div class="cart-icon" id="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <span class="cart-count" id="cart-count">0</span>
+            </div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Contact &amp; Orders</h1>
+            <p>To place an order or ask a question, reach out below — we'd love to hear from you.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <!-- TODO (client): replace the placeholder links/handles below with real details. -->
+        <div class="contact-methods">
+            <a href="mailto:hello@coralcoastsoapery.com" class="contact-method">
+                <span class="contact-method-icon">✉️</span>
+                <span class="contact-method-label">Email</span>
+                <span class="contact-method-value">hello@coralcoastsoapery.com</span>
+            </a>
+            <a href="https://wa.me/10000000000" class="contact-method" target="_blank" rel="noopener">
+                <span class="contact-method-icon">💬</span>
+                <span class="contact-method-label">WhatsApp</span>
+                <span class="contact-method-value">Message us to order</span>
+            </a>
+            <a href="https://instagram.com/coralcoastsoapery" class="contact-method" target="_blank" rel="noopener">
+                <span class="contact-method-icon">📸</span>
+                <span class="contact-method-label">Instagram</span>
+                <span class="contact-method-value">@coralcoastsoapery</span>
+            </a>
+        </div>
+
+        <div class="contact-form-wrapper">
+            <h2>Send an order enquiry</h2>
+            <p class="contact-form-note">Tell us what you'd like and we'll get back to you to confirm pricing, payment and shipping.</p>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="cName">Your Name</label>
+                    <input type="text" id="cName" required>
+                </div>
+                <div class="form-group">
+                    <label for="cEmail">Your Email</label>
+                    <input type="email" id="cEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="cMessage">What would you like to order or ask?</label>
+                    <textarea id="cMessage" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Enquiry</button>
+            </form>
+            <p class="contact-form-status" id="contact-form-status"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Coral Coast Soapery. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
