@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Coral Coast Soapery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo/CORAL COAST_LOGO.jpg" alt="Coral Coast Soapery Logo">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="checkout-container">
+        <form class="checkout-form" id="checkout-form">
+            <h2>Billing & Shipping</h2>
+            <br>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" id="address" required>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required>
+                </div>
+                <div class="form-group">
+                    <label for="zip">Zip Code</label>
+                    <input type="text" id="zip" required>
+                </div>
+            </div>
+            <h3 style="margin-top: 1.5rem; margin-bottom: 1rem;">Payment Information</h3>
+            <div class="form-group">
+                <label for="card">Card Number</label>
+                <input type="text" id="card" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Order</button>
+        </form>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <br>
+            <div id="order-items">
+                <!-- Order items injected here -->
+            </div>
+            <hr style="margin: 1rem 0; border: none; border-top: 1px solid #ccc;">
+            <div style="display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: bold;">
+                <span>Total</span>
+                <span id="checkout-total">$0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Coral Coast Soapery. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
