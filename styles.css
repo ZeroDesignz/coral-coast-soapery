@@ -96,34 +96,7 @@ nav a:hover::after {
     width: 100%;
 }
 
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: rgba(253, 251, 247, 0.98);
-        backdrop-filter: blur(10px);
-        padding: 2rem;
-        gap: 1.5rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        transform: translateY(-150%);
-        opacity: 0;
-        transition: var(--transition-smooth);
-        pointer-events: none;
-    }
 
-    nav ul.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-}
 
 .cart-icon {
     position: relative;
@@ -547,7 +520,7 @@ footer {
         transition: var(--transition-smooth);
     }
 
-    nav ul.open {
+    nav ul.active {
         max-height: 320px;
         opacity: 1;
         pointer-events: auto;
