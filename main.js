@@ -517,33 +517,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // Product cards expose the id on the wrapper; the product-detail
             // button has no card wrapper, so fall back to the button's own id.
             const id = btn.dataset.id || (productCard && productCard.dataset.id);
-            if(!id) return;
-
-            const product = productsData.find(p => p.id === id);
-            if(!product) return;
-
-            const title = product.title;
-            const price = product.price;
-            const image = product.image;
-            
-            const existingItem = cart.find(item => item.id === id);
-            if(existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ id, title, price, image, quantity: 1 });
+            const productId = btn.dataset.id;
+            if (productId) {
+                const product = productsData.find(p => p.id === productId);
+                if (product) {
+                    const existingItem = cart.find(item => item.id === productId);
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push({ ...product, quantity: 1 });
+                    }
+                    saveCart();
+                    updateCartCount();
+                    showToast(`Added ${product.title} to your cart!`);
+                }
             }
-            
-            saveCart();
-            updateCartCount();
-            
-            // Animation feedback
-            const originalText = btn.innerText;
-            btn.innerText = 'Added!';
-            btn.style.backgroundColor = 'var(--color-secondary)';
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.backgroundColor = '';
-            }, 1000);
         }
     });
     
@@ -688,9 +676,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
-            
-            // Re-bind the add-to-cart listener for this specific button
-            // Actually, the delegated click listener on document will handle it automatically!
         } else {
             productDetailContainer.innerHTML = `<h2>Product not found. <a href="shop.html" style="color: var(--color-accent); text-decoration: underline;">Return to Shop</a></h2>`;
         }
@@ -700,10 +685,57 @@ document.addEventListener('DOMContentLoaded', () => {
     if(checkoutForm) {
         checkoutForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Order placed successfully! Thank you for choosing Coral Coast Soapery.');
+            alert('Thank you for your order! This is a demo so no real transaction occurred.');
             cart = [];
             saveCart();
             window.location.href = 'index.html';
+        });
+    }
+
+    // Add Toast Container to body if it doesn't exist
+    if (!document.getElementById('toast-container')) {
+        const toastContainer = document.createElement('div');
+        toastContainer.id = 'toast-container';
+        document.body.appendChild(toastContainer);
+    }
+
+    function showToast(message) {
+        const container = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `🌿 ${message}`;
+        container.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.classList.add('fade-out');
+            setTimeout(() => {
+                toast.remove();
+            }, 500);
+        }, 3000);
+    }
+
+    // Scroll Reveal Animation
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 50;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal(); // trigger on load
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
     }
 

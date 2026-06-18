@@ -60,15 +60,45 @@
     </div>
 
     <!-- Product Detail Container -->
-    <div class="product-detail-wrapper">
+    <div class="product-detail-wrapper reveal">
         <a href="shop.html" class="back-link">&larr; Back to Shop</a>
         <div class="product-detail-container" id="product-detail-container">
             <!-- Dynamic product detail injected here by main.js -->
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Coral Coast Soapery. All rights reserved.</p>
+        <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Coral Coast Soapery</h3>
+                <p>Handcrafted, organic, and small-batch soaps made with love. Nourish your skin and soul with our premium natural ingredients.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/coralcoastsoapery" target="_blank" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p style="color: #a0aec0; font-size: 0.95rem;">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Coral Coast Soapery. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="main.js"></script>
