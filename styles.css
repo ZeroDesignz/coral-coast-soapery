@@ -204,7 +204,7 @@ nav a:hover::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(253, 251, 247, 0.6);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-content {
@@ -215,7 +215,8 @@ nav a:hover::after {
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    color: var(--color-accent);
+    color: var(--color-white);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content p {
@@ -223,6 +224,8 @@ nav a:hover::after {
     margin-bottom: 2rem;
     max-width: 600px;
     margin-inline: auto;
+    color: var(--color-white);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
 }
 
 .btn {
