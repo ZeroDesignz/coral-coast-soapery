@@ -35,12 +35,15 @@ const productsData = [
 ];
 
 function createProductCard(product) {
+    // Only display weight if it's applicable
+    const weightDisplay = product.weight !== 'N/A' ? `<p class="product-weight">${product.weight}</p>` : '';
+    
     return `
         <div class="product-card" data-id="${product.id}">
             <img src="${product.image}" alt="${product.title}" class="product-image">
             <div class="product-info">
                 <h3 class="product-title">${product.title}</h3>
-                <p class="product-weight">${product.weight} | SKU: ${product.sku}</p>
+                ${weightDisplay}
                 <p class="product-desc-small">${product.description}</p>
                 <p class="product-scent" style="font-size: 0.85rem; font-style: italic; color: var(--color-ocean); margin-bottom: 0.25rem;">✨ ${product.scent}</p>
                 <p class="product-ingredients" style="font-size: 0.8rem; color: #718096; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" title="${product.ingredients}"><strong>Ingredients:</strong> ${product.ingredients}</p>
