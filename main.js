@@ -40,9 +40,13 @@ function createProductCard(product) {
     
     return `
         <div class="product-card" data-id="${product.id}">
-            <img src="${product.image}" alt="${product.title}" class="product-image">
+            <a href="product.html?id=${product.id}" class="product-link">
+                <img src="${product.image}" alt="${product.title}" class="product-image">
+            </a>
             <div class="product-info">
-                <h3 class="product-title">${product.title}</h3>
+                <a href="product.html?id=${product.id}" class="product-link">
+                    <h3 class="product-title">${product.title}</h3>
+                </a>
                 ${weightDisplay}
                 <p class="product-desc-small">${product.description}</p>
                 <p class="product-scent" style="font-size: 0.85rem; font-style: italic; color: var(--color-ocean); margin-bottom: 0.25rem;">✨ ${product.scent}</p>
@@ -213,6 +217,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 orderItemsContainer.appendChild(itemEl);
             });
             document.getElementById('checkout-total').innerText = '$' + total.toFixed(2);
+        }
+    }
+    
+    // Render Individual Product Page (if on product.html)
+    const productDetailContainer = document.getElementById('product-detail-container');
+    if (productDetailContainer) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const product = productsData.find(p => p.id === productId);
+        
+        if (product) {
+            document.title = `${product.title} | Coral Coast Soapery`;
+            const weightDisplay = product.weight !== 'N/A' ? `<p class="pd-weight">Weight: ${product.weight}</p>` : '';
+            
+            productDetailContainer.innerHTML = `
+                <div class="pd-gallery">
+                    <img src="${product.image}" alt="${product.title}">
+                </div>
+                <div class="pd-info">
+                    <p class="pd-category">${product.category}</p>
+                    <h1 class="pd-title">${product.title}</h1>
+                    <div class="pd-price">$${product.price.toFixed(2)}</div>
+                    <p class="pd-scent">✨ ${product.scent}</p>
+                    <p class="pd-desc">${product.description}</p>
+                    ${weightDisplay}
+                    <div class="pd-ingredients">
+                        <h3>Ingredients</h3>
+                        <p>${product.ingredients}</p>
+                    </div>
+                    
+                    <button class="btn btn-primary add-to-cart pd-add-btn" data-id="${product.id}">Add to Cart</button>
+                    
+                    <div class="pd-shipping-note">
+                        <p>🌿 Handmade in small batches. Please allow 3-5 days for shipping.</p>
+                    </div>
+                </div>
+            `;
+            
+            // Re-bind the add-to-cart listener for this specific button
+            // Actually, the delegated click listener on document will handle it automatically!
+        } else {
+            productDetailContainer.innerHTML = `<h2>Product not found. <a href="shop.html" style="color: var(--color-accent); text-decoration: underline;">Return to Shop</a></h2>`;
         }
     }
     
