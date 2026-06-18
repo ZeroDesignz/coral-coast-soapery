@@ -495,14 +495,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('nav-menu');
     if(menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
-            const isOpen = navMenu.classList.toggle('open');
-            menuToggle.classList.toggle('active', isOpen);
-            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            const isActive = navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active', isActive);
+            menuToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
         });
         // Close the menu after tapping a link
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                navMenu.classList.remove('open');
+                navMenu.classList.remove('active');
                 menuToggle.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
             });
@@ -729,15 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', reveal);
     reveal(); // trigger on load
 
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-    }
+
 
     // Contact / order enquiry form -> opens the visitor's email client pre-filled
     const contactForm = document.getElementById('contact-form');
